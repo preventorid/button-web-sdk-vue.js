@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <pvt-button ref="pvtbutton" v-bind:config="config"></pvt-button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+const config = {
+  flowType: "YOUR_FLOW_TYPE",
+  credentials: {
+    apiKey: "YOUR_API_KEY",
+    clientSecret: "YOUR_CLIENT_SECRET",
+    tenant: "YOUR_TENANT",
+    banknu: "YOUR_BANKNU",
+    env: "YOUR_ENV",
+  },
+  deskVerificationEnabled: true,
+  currentUserInfo: {
+    cifCode: "YOUR_CIFCODE",
+  },
+};
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return { config };
+  },
+  mounted: function () {
+    const pvtButton = this.$refs.pvtbutton;
+    pvtButton.addEventListener("loaded", () => pvtButton.initialize(config));
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

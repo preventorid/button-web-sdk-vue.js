@@ -1,24 +1,3 @@
-# preventor-vue-sample
+# Preventor Button Web Vue SDK
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+You can consult the complete documentation by entering the following link: https://docs.preventor.com/web-client-side-sdks/vue.js
